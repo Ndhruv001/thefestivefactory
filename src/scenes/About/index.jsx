@@ -61,7 +61,7 @@ function BrandStory() {
           {/* Image */}
           <div className="relative rounded-3xl overflow-hidden h-80 lg:h-[460px] order-2 lg:order-1">
             <img
-              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80"
+              src="/about/about.webp"
               alt="TheFestiveFactory manufacturing"
               className="w-full h-full object-cover"
             />

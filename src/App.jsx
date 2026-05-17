@@ -33,6 +33,7 @@ export default function App() {
     <BrowserRouter>
       {/* Global sticky navbar */}
       <ScrollToTop />
+      <div className="min-h-dvh overflow-x-hidden">
       <Navbar />
 
       {/* Page routes */}
@@ -51,6 +52,7 @@ export default function App() {
 
       {/* Sticky WhatsApp floating button — always visible */}
       <WhatsAppButton />
+      </div>
     </BrowserRouter>
   );
 }
