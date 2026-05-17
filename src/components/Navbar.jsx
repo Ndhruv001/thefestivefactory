@@ -8,7 +8,7 @@
  */
 
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { NAV_LINKS } from "../constants";
 import { buildWhatsAppLink, cn } from "../lib/helpers";
 import logo from "../assets/logo.png"; // Place the provided logo PNG here
@@ -17,7 +17,6 @@ export default function Navbar() {
   /* ── State ──────────────────────────────────────────────── */
   const [scrolled, setScrolled] = useState(false); // controls glass bg
   const [menuOpen, setMenuOpen] = useState(false); // mobile menu toggle
-  const location = useLocation();
 
   /* ── Scroll listener ────────────────────────────────────── */
   useEffect(() => {
@@ -26,40 +25,45 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Close mobile menu whenever route changes */
-  useEffect(() => setMenuOpen(false), [location.pathname]);
-
   /* ── Helpers ────────────────────────────────────────────── */
-  const isActive = (href) => location.pathname === href;
 
   return (
-    <nav className={cn("fixed top-0 left-0 right-0 z-50 bg-black")}>
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-[#0B0F14]/80 backdrop-blur-md border-b border-white/5 shadow-lg"
+          : "bg-transparent",
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* ── Logo ──────────────────────────────────────── */}
-          <Link to="/" className="flex-shrink-0">
+          <NavLink to="/" className="flex-shrink-0">
             <img
               src={logo}
               alt="TheFestiveFactory"
               className="h-10 md:h-12 w-auto object-contain"
             />
-          </Link>
+          </NavLink>
 
           {/* ── Desktop Nav Links ─────────────────────────── */}
           <ul className="hidden md:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <Link
+                <NavLink
                   to={link.href}
-                  className={cn(
-                    "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-                    isActive(link.href)
-                      ? "text-[#66E3E3] bg-white/5"
-                      : "text-[#D1D5DB] hover:text-white hover:bg-white/5",
-                  )}
+                  className={({ isActive }) =>
+                    cn(
+                      "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                      isActive
+                        ? "text-[#66E3E3] bg-white/5"
+                        : "text-[#D1D5DB] hover:text-white hover:bg-white/10",
+                    )
+                  }
                 >
                   {link.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -125,23 +129,25 @@ export default function Navbar() {
       <div
         className={cn(
           "md:hidden overflow-hidden transition-all duration-300 bg-[#0B0F14]/95 backdrop-blur-md border-t border-white/5",
-          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0",
+          menuOpen ? "max-h-125 opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <ul className="px-4 py-4 flex flex-col gap-1">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <Link
+              <NavLink
                 to={link.href}
-                className={cn(
-                  "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
-                  isActive(link.href)
-                    ? "text-[#66E3E3] bg-white/5"
-                    : "text-[#D1D5DB] hover:text-white hover:bg-white/5",
-                )}
+                className={({ isActive }) =>
+                  cn(
+                    "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+                    isActive
+                      ? "text-[#66E3E3] bg-white/5"
+                      : "text-[#D1D5DB] hover:text-white hover:bg-white/5",
+                  )
+                }
               >
                 {link.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
 

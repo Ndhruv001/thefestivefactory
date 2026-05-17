@@ -113,24 +113,43 @@ export default function Footer() {
   );
 }
 
-/* ── Internal helper: social icon link ─────────────────────────── */
-function SocialLink({ href, label, children }) {
+function SocialLink({ label, children }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="
-        w-9 h-9 rounded-full
-        flex items-center justify-center
-        bg-white/5 text-[#9CA3AF]
-        hover:bg-[#66E3E3]/10 hover:text-[#66E3E3]
-        border border-white/10 hover:border-[#66E3E3]/30
-        transition-all duration-200
-      "
-    >
-      {children}
-    </a>
+    <div className="relative group">
+      <button
+        type="button"
+        aria-label={`${label} coming soon`}
+        disabled
+        className="
+          w-9 h-9 rounded-full
+          flex items-center justify-center
+          bg-white/5 text-[#9CA3AF]
+          border border-white/10
+          cursor-not-allowed
+          opacity-70
+          transition-all duration-200
+        "
+      >
+        {children}
+      </button>
+
+      {/* Tooltip */}
+      <div
+        className="
+          absolute left-1/2 -translate-x-1/2
+          bottom-12
+          px-3 py-1.5
+          rounded-md
+          bg-black/90
+          text-xs text-white
+          whitespace-nowrap
+          opacity-0 pointer-events-none
+          group-hover:opacity-100
+          transition-opacity duration-200
+        "
+      >
+        Available Soon
+      </div>
+    </div>
   );
 }

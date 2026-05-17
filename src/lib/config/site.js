@@ -13,24 +13,24 @@ export const SITE_CONFIG = {
 
   // ── Contact ──────────────────────────────────────────────
   whatsapp: {
-    number: "919999999999", // Replace with real number (country code + number)
+    number: "918882362297", // Replace with real number (country code + number)
     defaultMessage:
       "Hi! I'm interested in bulk costume orders from TheFestiveFactory. Can you share your catalog?",
   },
 
-  email: "hello@thefestivefactory.in",
-  phone: "+91 99999 99999",
+  email: "info.thefestivefactory@gmail.com",
+  phone: "+91 88823 62297",
 
   // ── Social Links ─────────────────────────────────────────
   social: {
-    instagram: "https://instagram.com/thefestivefactory",
-    facebook: "https://facebook.com/thefestivefactory",
-    youtube: "https://youtube.com/@thefestivefactory",
+    instagram: "",
+    facebook: "",
+    youtube: "",
   },
 
   // ── Business Info ─────────────────────────────────────────
-  address: "Mumbai, Maharashtra, India",
-  businessHours: "Mon - Sat: 10:00 AM - 7:00 PM",
+  address: "Paharganj, New Delhi, India",
+  businessHours: "Mon - Sat: 10:00 AM - 8:00 PM",
 
   // ── SEO ───────────────────────────────────────────────────
   seo: {

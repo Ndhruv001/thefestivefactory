@@ -18,13 +18,13 @@ const GALLERY_IMAGES = [
   {
     id: 1,
     src: "/home/gallery/gallery_1.webp",
-    alt: "Christmas event setup",
+    alt: "Festive celebration",
     span: "tall",
   },
   {
     id: 2,
     src: "/home/gallery/gallery_2.webp",
-    alt: "School annual day performance",
+    alt: "Mascot costume event",
     span: "normal",
   },
   {
@@ -36,31 +36,31 @@ const GALLERY_IMAGES = [
   {
     id: 4,
     src: "/home/gallery/gallery_4.webp",
-    alt: "Holi celebration event",
+    alt: "Fancy dress competition",
     span: "tall",
   },
   {
     id: 5,
     src: "/home/gallery/gallery_5.webp",
-    alt: "Halloween party costumes",
+    alt: "Christmas event setup",
     span: "normal",
   },
   {
     id: 6,
     src: "/home/gallery/gallery_6.webp",
-    alt: "Festive stage performance",
+    alt: "Janmashtami celebration",
     span: "normal",
   },
   {
     id: 7,
     src: "/home/gallery/gallery_7.webp",
-    alt: "Janmashtami celebration",
+    alt: "Festive stage performance",
     span: "tall",
   },
   {
     id: 8,
     src: "/home/gallery/gallery_8.webp",
-    alt: "Mascot costume event",
+    alt: "School annual day costumes",
     span: "normal",
   },
 ];
@@ -71,21 +71,18 @@ export default function GallerySection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section
-      id="gallery"
-      ref={ref}
-      className="bg-[#111827] py-24"
-    >
+    <section id="gallery" ref={ref} className="bg-[#111827] py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Heading */}
         <div className="mb-14">
           <SectionHeading
@@ -103,7 +100,7 @@ export default function GallerySection() {
               className={cn(
                 "break-inside-avoid overflow-hidden rounded-2xl group relative",
                 "opacity-0 scale-95 transition-all",
-                visible && "!opacity-100 !scale-100"
+                visible && "!opacity-100 !scale-100",
               )}
               style={{
                 transitionDuration: "600ms",
@@ -111,16 +108,23 @@ export default function GallerySection() {
                 transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
               }}
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                className={cn(
-                  "w-full object-cover rounded-2xl",
-                  "transition-transform duration-700 group-hover:scale-105",
-                  img.span === "tall" ? "h-72" : "h-48"
-                )}
-              />
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={600}
+                  height={img.span === "tall" ? 900 : 600}
+                  className={cn(
+                    "w-full object-cover",
+                    "transition-transform duration-700",
+                    "group-hover:scale-[1.02]",
+                    "will-change-transform",
+                    img.span === "tall" ? "h-72" : "h-48",
+                  )}
+                />
+              </div>
 
               {/* Hover overlay with label */}
               <div

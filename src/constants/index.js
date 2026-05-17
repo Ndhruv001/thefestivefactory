@@ -10,8 +10,6 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Collections", href: "/collections" },
   { label: "About", href: "/about" },
-  { label: "Bulk Orders", href: "/#bulk-orders" },
-  { label: "Gallery", href: "/#gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -124,7 +122,7 @@ export const FEATURED_PRODUCTS = [
   {
     id: "santa-premium",
     name: "Santa Claus Premium Suit",
-    tag: "Christmas • Adult",
+    tag: "Christmas • Kids & Adult",
     image: "/home/featured_products/santa.webp",
   },
   {
@@ -134,15 +132,15 @@ export const FEATURED_PRODUCTS = [
     image: "/home/featured_products/krishna.webp",
   },
   {
-    id: "halloween-vampire",
-    name: "Halloween Vampire Costume",
-    tag: "Halloween • All Sizes",
+    id: "holi",
+    name: "Holi Vibrant Outfit",
+    tag: "Holi • All Sizes",
     image: "/home/featured_products/holi.webp",
   },
   {
-    id: "freedom-fighter",
-    name: "School Freedom Fighter Outfit",
-    tag: "Fancy Dress • Kids",
+    id: "mascot",
+    name: "Custom Mascot Costume",
+    tag: "Mascot • All Sizes",
     image: "/home/featured_products/mascot.webp",
   },
 ];

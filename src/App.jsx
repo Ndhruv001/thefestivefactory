@@ -17,28 +17,30 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 /* ── Layout components ──────────────────────────────────────── */
-import Navbar          from "./components/Navbar";
-import Footer          from "./components/Footer";
-import WhatsAppButton  from "./components/WhatsAppButton";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 /* ── Page scenes ────────────────────────────────────────────── */
-import Home        from "./scenes/Home";
+import Home from "./scenes/Home";
 import Collections from "./scenes/Collections";
-import About       from "./scenes/About";
-import Contact     from "./scenes/Contact";
+import About from "./scenes/About";
+import Contact from "./scenes/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
       {/* Global sticky navbar */}
+      <ScrollToTop />
       <Navbar />
 
       {/* Page routes */}
       <Routes>
-        <Route path="/"            element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/collections" element={<Collections />} />
-        <Route path="/about"       element={<About />} />
-        <Route path="/contact"     element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
 
         {/* Collection sub-pages — reuse Collections for now, extend later */}
         <Route path="/collections/:slug" element={<Collections />} />
