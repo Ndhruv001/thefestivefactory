@@ -40,7 +40,7 @@ export default function WhyUsSection() {
             )}
           >
             <img
-              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80"
+              src="/home/why_choose_us/manufacturer.webp"
               alt="Premium festive costume manufacturing"
               className="w-full h-full object-cover"
             />

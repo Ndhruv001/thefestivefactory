@@ -9,7 +9,6 @@
  */
 
 import { buildWhatsAppLink, scrollToSection } from "../../lib/helpers";
-import { HERO_BADGES } from "../../constants";
 
 export default function HeroSection() {
   return (
@@ -43,16 +42,7 @@ export default function HeroSection() {
       {/* ── Main Content ─────────────────────────────────────── */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-        {/* Eyebrow tag */}
-        <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6
-                     border border-white/10 bg-white/5 backdrop-blur-sm
-                     text-xs font-semibold tracking-widest uppercase text-[#66E3E3]"
-          style={{ animation: "fadeSlideUp 0.7s ease both" }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#66E3E3] animate-pulse" />
-          Premium Festive Manufacturer · India
-        </div>
+        
 
         {/* Headline */}
         <h1
@@ -122,33 +112,7 @@ export default function HeroSection() {
           </a>
         </div>
 
-        {/* Trust badge pills */}
-        <div
-          className="flex flex-wrap items-center justify-center gap-2.5"
-          style={{ animation: "fadeSlideUp 0.7s ease 0.52s both" }}
-        >
-          {HERO_BADGES.map((badge) => (
-            <span
-              key={badge}
-              className="
-                px-4 py-1.5 rounded-full
-                bg-white/5 border border-white/10 backdrop-blur-sm
-                text-[#D1D5DB] text-xs font-medium
-              "
-            >
-              ✦ {badge}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Scroll indicator ─────────────────────────────────── */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50"
-        style={{ animation: "fadeSlideUp 0.7s ease 0.65s both" }}
-      >
-        <span className="text-[10px] text-[#9CA3AF] tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-[#9CA3AF] to-transparent" />
+        
       </div>
 
       {/* ── Keyframe styles ───────────────────────────────────── */}
