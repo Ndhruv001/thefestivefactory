@@ -21,7 +21,7 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1513151233558-d860c5398176?w=1800&q=80')",
+            "url('/home/hero/hero_image.webp')",
         }}
       />
 

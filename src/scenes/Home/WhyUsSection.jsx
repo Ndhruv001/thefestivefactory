@@ -40,7 +40,7 @@ export default function WhyUsSection() {
             )}
           >
             <img
-              src="/home/why_choose_us/manufacturer.webp"
+              src="/home/why_choose_us/manufacture.webp"
               alt="Premium festive costume manufacturing"
               className="w-full h-full object-cover"
             />
