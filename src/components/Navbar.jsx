@@ -137,6 +137,7 @@ export default function Navbar() {
             <li key={link.href}>
               <NavLink
                 to={link.href}
+                onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
                   cn(
                     "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
@@ -155,6 +156,7 @@ export default function Navbar() {
           <li className="pt-2">
             <a
               href={buildWhatsAppLink()}
+              onClick={() => setMenuOpen(false)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm font-semibold text-white
